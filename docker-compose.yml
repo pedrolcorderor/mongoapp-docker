@@ -2,6 +2,7 @@ version: "3.9"
 services:
   chanchito:
     build: .
+    command: ["./wait-for-it/wait-for-it.sh", "monguito:27017", "--", "node", "app.js"]
     ports:
       - "3000:3000"
     links:
